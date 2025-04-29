@@ -1,5 +1,7 @@
 # How to report problems with workstations
 
+
+
 ## With calculations ...
 
 There are pieces of information we need to solve almost every problem.
@@ -23,9 +25,11 @@ There are pieces of information we need to solve almost every problem.
 
 ## With connectivity ...
 
+Let's pretend that `fred` is the name of a workstation.
 These are the "*I cannot SSH to Fred*" problems. You can do a bit of
 diagnosis that is helpful, and that will reduce the time it takes to
-solve the problem. Let's pretend that `fred` is the name of a workstation.
+solve the problem. 
+
 
 ### Can the computer in question be seen by you on the network?
 
@@ -36,11 +40,20 @@ Type `host fred`. You should see something like this.
 If you get an error, `fred` is either the wrong name or the workstation
 is incorrectly entered in UR's DNS system.
 
+As strange as it sounds, we sometimes see problems where a workstation
+has more than one name, or the names and IP addresses are not 
+correctly paired. Make sure that this command tells you the 
+address belongs to `fred` or `fred.richmond.edu`!
+
+`host 141.166.220.100`
+
 ### Can you ping it?
 
-Type `ping -c 4 fred`. This will send `fred` four packets at one second
+Type `ping -c 6 fred`. This will send `fred` six packets at one second
 intervals to echo back to you. If you get them all back, then fred has
-an network card that is correctly attached to the network.
+an network card that is correctly attached to the network. If you get
+some but not all back, then it is time to check `fred` for a loose
+network cable.
 
 ### Can you reach SSH's port on the other end?
 
