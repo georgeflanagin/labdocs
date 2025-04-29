@@ -45,8 +45,8 @@ an network card that is correctly attached to the network.
 ### Can you reach SSH's port on the other end?
 
 Type `nc -zv fred 22`. SSH's port is `22`, and `nc` is the most general
-network connectivity program extant. `-zv` asks if port 22 is open.
-listening.
+network connectivity program extant. `-zv` asks if port 22 is even open
+(accepting network traffic) at all.
 
 If you cannot reach port 22 on fred, it could be a problem with "network
 routing" of SSH. If this is the case, you *may* be able to find out more
@@ -60,9 +60,9 @@ listening. For example, `SSH-2.0-OpenSSH_8.7`.
 
 ### What happens when SSH tries to connect and authenticate?
 
-Type `ssh -v fred` (assuming you are using your current `netid`). 
-Because you are having problems connecting, the command will still
-fail, but the `-v` will tell you more about how and why. Save 
-the (rather large) output to the screen, and attach it to an email.
+Type `ssh -v fred` (assuming you are using your current `netid`).
+Because you are having problems connecting, the command will still fail,
+but the `-v` will tell you more about how and why. Save the (rather large)
+output to the screen, and attach it to an email.
 
 
